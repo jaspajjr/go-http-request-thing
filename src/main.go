@@ -27,5 +27,5 @@ func main() {
 	mux.Handle("/", loggerMiddleware(http.HandlerFunc(indexPageHandler)))
 	mux.Handle("/about", loggerMiddleware(http.HandlerFunc(aboutPageHandler)))
 
-	http.ListenAndServe("", mux)
+	http.ListenAndServe("8080", mux)
 }
