@@ -27,5 +27,7 @@ func main() {
 	mux.Handle("/", loggerMiddleware(http.HandlerFunc(indexPageHandler)))
 	mux.Handle("/about", loggerMiddleware(http.HandlerFunc(aboutPageHandler)))
 
+	fmt.Println("It's running and what not.")
+
 	http.ListenAndServe("8080", mux)
 }
