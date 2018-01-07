@@ -22,12 +22,12 @@ func loggerMiddleware(nextHandler http.Handler) http.Handler {
 }
 
 func main() {
+	fmt.Println("It's running and what not.")
+
 	mux := http.NewServeMux()
 
 	mux.Handle("/", loggerMiddleware(http.HandlerFunc(indexPageHandler)))
 	mux.Handle("/about", loggerMiddleware(http.HandlerFunc(aboutPageHandler)))
 
-	fmt.Println("It's running and what not.")
-
-	http.ListenAndServe("8080", mux)
+	http.ListenAndServe(":8080", mux)
 }
